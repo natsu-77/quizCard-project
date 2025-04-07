@@ -28,6 +28,7 @@ export default function QuizCard({question,options,answer}){
           )}
         </div>
         {answerMessage ? <div>{answerMessage}</div> : null}
+        {answerMessage ? <button>次の問題へ</button> : null}
       </div>
     );
 }
