@@ -15,6 +15,12 @@ export default function QuizCard({question,options,answer}){
       }
     }
 
+    //「もう一度解答する」ボタンを押した際に初期状態に復元する関数
+    const resetAnswer=()=>{
+      setAnswerMessage("");
+      setSelectedAnswer(null);
+    }
+
     return(
       <div className='card'>
         <div className='question'>
@@ -28,7 +34,7 @@ export default function QuizCard({question,options,answer}){
           )}
         </div>
         {answerMessage ? <div>{answerMessage}</div> : null}
-        {answerMessage ? <button>次の問題へ</button> : null}
+        {answerMessage ? <button onClick={resetAnswer}>もう一度解答する</button> : null}
       </div>
     );
 }
